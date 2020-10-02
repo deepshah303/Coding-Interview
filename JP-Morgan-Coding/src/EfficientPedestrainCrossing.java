@@ -4,7 +4,7 @@ import java.util.Map;
 import java.util.Scanner;
 
 import model.SignalConfig;
-
+//
 public class EfficientPedestrainCrossing {
 
 	static Map<String, SignalConfig> signals = new LinkedHashMap<>();
