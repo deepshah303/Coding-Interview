@@ -37,10 +37,7 @@ public class EfficientPedestrainCrossing {
 				break;
 
 			case 3 :
-				System.out.println("Enter epc id ");
-				String epcId = sc.next();
-				System.out.println("1.Delete? \n 2.Change parameters \n Enter your choice: ");
-				int signalChoice = sc.nextInt();
+				
 				manageSignal();
 				break;
 			
@@ -67,7 +64,10 @@ public class EfficientPedestrainCrossing {
 	}
 
 	private static void manageSignal() {
-		
+		System.out.println("Enter epc id ");
+		String epcId = sc.next();
+		System.out.println("1.Delete? \n 2.Change parameters \n Enter your choice: ");
+		int ch = sc.nextInt();
 		switch (ch) {
 		case 1:
 			signals.remove(epcId);
