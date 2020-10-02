@@ -5,7 +5,14 @@ import java.util.Scanner;
 
 import model.SignalConfig;
 
-//
+
+
+/**
+ * @author Deep Shah 
+ * Main Class 
+ * Version : v1
+ * Date : 6th Aug 2020
+ */
 public class EfficientPedestrainCrossing {
 
 	static Map<String, SignalConfig> signals = new LinkedHashMap<>();
@@ -65,12 +72,25 @@ public class EfficientPedestrainCrossing {
 
 	}
 
+	
+	/**
+	 * This method will list all the traffic signals in the order of its creation. 
+	 * It will display location name and its parameters
+	 */
 	private static void listSignal() {
 		for (Map.Entry<String, SignalConfig> entry : signals.entrySet()) {
 			System.out.println("epc id :" + entry.getKey() + "Details: " + entry.getValue());
 		}
 	}
 
+	/**
+	 * @param epcId
+	 * @param manageSignalChoice
+	 * 
+	 * This method will allow to manage any created traffic signal 
+	 * by giving options to change their parameters 1.e waiting time and no of pedestrians
+	 *  allowed to cross. Also It should have an ability to remove any traffic signal
+	 */
 	private static void manageSignal(String epcId, int manageSignalChoice) {
 
 		switch (manageSignalChoice) {
@@ -94,6 +114,15 @@ public class EfficientPedestrainCrossing {
 
 	}
 
+	/**
+	 * @param epcId
+	 * @param noOfPedestainsWaiting
+	 * 
+	 * 
+	 * This function is to test the particular traffic signal. 
+	 * It will take Input as epc id and number of pedestrians waiting to cross. 
+	 * And after the threshold value is classed, pedestrians should be allowed to cross
+	 */
 	private static void testSignal(String epcId, int noOfPedestainsWaiting) {
 		SignalConfig epc = signals.get(epcId);
 		int threshold = getThreshold(epcId, noOfPedestainsWaiting);
@@ -113,6 +142,11 @@ public class EfficientPedestrainCrossing {
 
 	}
 
+	/**
+	 * @param epcId
+	 * @param noOfPedestainsWaiting
+	 * @return Will give threshold value for pedestrian signal to turn green
+	 */
 	private static int getThreshold(String epcId, int noOfPedestainsWaiting) {
 
 		SignalConfig epc = signals.get(epcId);
@@ -121,6 +155,18 @@ public class EfficientPedestrainCrossing {
 		return threshold;
 	}
 
+	
+	/**
+	 * @param epcId
+	 * @param locationName
+	 * @param waitingTime
+	 * @param noOfPedestrainsAllowed
+	 * @return boolean value to indicate that the signal has been created
+	 * 
+	 * This method allows to setup a traffic signal with initial threshold values.
+	 * Minimum details required would be: EPC id, Location name, waiting period (Secs).
+	 * Number of pedestrians allowed to cross at one time
+	 */
 	private static boolean setupTrafficSignal(String epcId, String locationName, int waitingTime,
 			int noOfPedestrainsAllowed) {
 
