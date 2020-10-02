@@ -1,5 +1,11 @@
 package model;
-//
+
+/**
+ * @author Deep Shah
+ * 
+ * Model class which will store all the information about Signal
+ *
+ */
 public class SignalConfig {
 
 	private String epcId;

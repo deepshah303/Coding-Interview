@@ -10,7 +10,7 @@ import model.SignalConfig;
 /**
  * @author Deep Shah 
  * Main Class 
- * Version : v1
+ * @version : v1
  * Date : 6th Aug 2020
  */
 public class EfficientPedestrainCrossing {
