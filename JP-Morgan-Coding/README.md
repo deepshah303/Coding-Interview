@@ -1,3 +1,3 @@
 # Problem Statement
 
-![problem statement](JP-Morgan-Coding/Problem Statement EPC.png)
+![problem statement](/JP-Morgan-Coding/Problem Statement EPC.png)
